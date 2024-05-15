@@ -60,7 +60,7 @@ public class Room {
    * ".
    */
   private String exitString() {
-    String returnString = "Exits: ";
+    String returnString = "\nExits: ";
     for (Exit exit : exits) {
       returnString += exit.getDirection() + " ";
     }

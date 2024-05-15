@@ -21,6 +21,7 @@ public class Game {
    */
   public Game() {
     try {
+      initGameInfo("src\\zork\\data\\gameinfo.json");
       initRooms("src\\zork\\data\\rooms.json");
       initItems("src\\zork\\data\\items.json");
       currentRoom = roomMap.get("Lobby");
@@ -30,12 +31,27 @@ public class Game {
     parser = new Parser();
   }
 
-  private void initItems(String fileName) throws Exception {
+  private void initGameInfo(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
     JSONParser parser = new JSONParser();
     JSONObject json = (JSONObject) parser.parse(jsonString);
 
+    JSONObject jsonInfo = (JSONObject) json.get("gameinfo");
+    JSONArray introMessage = (JSONArray) jsonInfo.get("intromessage");
+
+    GameInfo.introMessage = new String[introMessage.size()];
+    for (int i = 0; i < introMessage.size(); i++) {
+      GameInfo.introMessage[i] = (String)introMessage.get(i);
+    }
+  }
+
+  private void initItems(String fileName) throws Exception {
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
+  
   }
 
   private void initRooms(String fileName) throws Exception {
@@ -97,9 +113,12 @@ public class Game {
    * Print out the opening message for the player.
    */
   private void printWelcome() {
+    GameInfo.clearScreen();
+    for (String s : GameInfo.introMessage) {
+      System.out.println(s);
+      System.out.println();
+    }
     System.out.println();
-    System.out.println("Welcome to Zork!");
-    System.out.println("Zork is a new, incredibly boring adventure game.");
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
