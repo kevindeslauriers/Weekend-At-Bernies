@@ -1,15 +1,78 @@
 {
   "rooms": [
     {
-      "id": "Hallway",
-      "name": "Hallway",
-      "description": "You are in a long hallway. There are family pictures on all of the walls.",
+      "id": "Lobby",
+      "name": "Lobby",
+      "longdescription": "The lobby of the Overlook Hotel welcomes guests with its opulent decor and old-world charm. A spacious area with polished marble floors, towering columns, and a grand staircase leading to the upper floors. Large windows let in the faint glow of moonlight, casting long shadows across the room. Antique furniture and elegant tapestries adorn the walls, hinting at the hotel's storied history.",
+      "shortdescription":"The entrance hall of the Overlook Hotel, featuring a grand staircase, chandeliers, and ornate furnishings.",
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "Bedroom"
+          "direction": "East",
+          "adjacentRoom": "Hallway 1a"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 1a",
+      "name": "Hallway",
+      "longdescription": "The hallway extends from the lobby, its walls lined with portraits of past hotel guests and vintage sconces casting a dim light. The hallway stretches into the distance, branching off into other corridors and rooms of the hotel. The air is still, with only the faint sound of footsteps echoing in the distance.",
+      "shortdescription":"A narrow hallway branching off from the lobby, leading to other areas of the hotel.",
+      "exits": [
+        {
+          "isLocked":false,
+          "direction": "West",
+          "adjacentRoom": "Lobby"
         },
+        {
+          "isLocked":false,
+          "direction": "East",
+          "adjacentRoom": "Gold Room"
+        },
+        {
+          "isLocked":false,
+          "direction": "South",
+          "adjacentRoom": "Hallway 1b"
+        }
+      ]
+    },
+    {
+      "id": "Gold Room",
+      "name": "Gold Room",
+      "longdescription": "The Gold Room is the crown jewel of the Overlook Hotel, a lavish ballroom resplendent in gold leaf and crystal. Ornate chandeliers hang from the ceiling, casting a warm glow over the dance floor below. Intricate patterns adorn the walls, reflecting the opulence of a bygone era. Velvet curtains frame large windows, offering glimpses of the moonlit landscape outside.",
+      "shortdescription":"A luxurious ballroom adorned with gold decor and sparkling chandeliers.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Hallway 1a"
+        }
+      ]
+    },
+    {
+      "id": "Kitchen",
+      "name": "Kitchen",
+      "longdescription": "The kitchen of the Overlook Hotel is a hive of activity, filled with the clatter of pots and pans and the aroma of delicious meals. Chefs bustle about, chopping vegetables and stirring bubbling pots on the stove. Shelves are stocked with ingredients from around the world, and industrial-sized appliances hum with energy. Despite its warmth and activity, there's an underlying sense of unease in the air.",
+      "shortdescription":"The bustling heart of the hotel where meals are prepared for guests and staff.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Storage Room"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Hallway 1b"
+        }
+      ]
+    },
+    {
+      "id": "Storage Room",
+      "name": "Storage Room",
+      "longdescription": "The storage room is a small, cluttered space tucked away in a corner of the hotel. Boxes and crates line the walls, filled with everything from cleaning supplies to spare linens. Dust motes dance in the dim light filtering in through a small window, casting long shadows across the room. The air is thick with the musty scent of old cardboard and forgotten belongings.",
+      "shortdescription":"A small room used for storing supplies and equipment.",
+      "exits": [
         {
           "isLocked": true,
           "direction": "East",
@@ -19,54 +82,201 @@
       ]
     },
     {
-      "id": "Bedroom",
-      "name": "Bedroom",
-      "description": "You are in a large bedroom",
+      "id": "Ballroom",
+      "name": "Ballroom",
+      "longdescription": "The ballroom of the Overlook Hotel is a magnificent sight to behold, with high ceilings, intricate moldings, and a gleaming hardwood floor. A raised stage at one end of the room is flanked by velvet curtains, while crystal chandeliers hang overhead, casting a soft glow over the space. Rows of chairs line the perimeter, waiting to be filled with guests eager to partake in the festivities. The air is charged with anticipation, as if the room itself is alive with the promise of revelry and celebration.",
+      "shortdescription":"An elegant space for gatherings and events, featuring a stage and dance floor.",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "Bathroom",
+          "keyId": "1234"
+        }
+      ]
+    },
+    {
+      "id": "Classic Guest Room",
+      "name": "Classic Guest Room",
+      "longdescription": "The room exudes a timeless elegance, with rich wood furnishings, plush carpets, and traditional artwork adorning the walls. A comfortable queen-sized bed sits against one wall, flanked by matching nightstands topped with vintage lamps. A cozy seating area by the window offers a perfect spot to enjoy a morning cup of coffee or a quiet moment of reflection. Soft, neutral tones create a warm and inviting atmosphere, inviting guests to unwind and relax in this tranquil haven.",
+      "shortdescription":"A cozy retreat with classic furnishings and a serene ambiance.",
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "Hallway"
-        },
-        {
-          "isLocked": false,
-          "direction": "SouthEast",
-          "adjacentRoom": "Bathroom"
+          "direction": "West",
+          "adjacentRoom": "Hallway 1c"
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Closet"
+          "adjacentRoom": "Classic Bathroom"
         }
       ]
     },
     {
-      "id": "Bathroom",
-      "name": "Bathroom",
-      "description": "You are in a blue bathroom",
+      "id": "Modern Guest Room",
+      "name": "Modern Guest Room",
+      "longdescription": "The room embraces a sleek and minimalist aesthetic, with clean lines, minimalist furnishings, and contemporary artwork. A king-sized bed with crisp white linens takes center stage, framed by sleek bedside tables and minimalist lighting fixtures. A sleek desk tucked into the corner offers a functional workspace for guests on the go. Floor-to-ceiling windows flood the room with natural light, offering sweeping views of the surrounding landscape. Cool, neutral tones and understated accents create a sense of calm and serenity in this modern oasis.",
+      "shortdescription":"A modern oasis with sleek design and minimalist decor.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway",
-          "keyId": "1234"
+          "adjacentRoom": "Hallway 1d"
         },
         {
           "isLocked": false,
-          "direction": "NorthWest",
-          "adjacentRoom": "Bedroom"
+          "direction": "East",
+          "adjacentRoom": "Modern Bathroom"
         }
       ]
     },
     {
-      "id": "Closet",
-      "name": "Closet",
-      "description": "You are in the closet. It is dark.",
+      "id": "Rustic Guest Room",
+      "name": "Rustic Guest Room",
+      "longdescription": "The room exudes rustic charm and cozy comfort, with warm wood furnishings, soft textiles, and charming accents. A wrought-iron queen-sized bed with a cozy quilt takes center stage, surrounded by rustic wooden furniture and vintage decor. A quaint seating area by the fireplace offers a cozy spot to curl up with a good book on chilly evenings. Soft, earthy tones and natural textures create a warm and inviting atmosphere, inviting guests to unwind and embrace the simple pleasures of country living.",
+      "shortdescription":"A charming retreat with rustic charm and cozy accents.",
       "exits": [
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Bedroom"
+          "adjacentRoom": "Hallway 1e"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Rustic Bathroom"
+        }
+      ]
+    },
+    {
+      "id": "Classic Bathroom",
+      "name": "Classic Bathroom",
+      "longdescription": "The bathroom exudes timeless elegance and vintage charm, with classic fixtures, marble countertops, and polished brass accents. A clawfoot bathtub takes center stage, surrounded by gleaming subway tiles and a vintage-inspired shower curtain. A pedestal sink with ornate detailing provides a touch of old-world charm, while a large mirror reflects the soft glow of the overhead sconces. Soft, fluffy towels and a selection of luxury bath products complete the picture, inviting guests to indulge in a relaxing soak and pamper themselves in this elegant sanctuary.",
+      "shortdescription":"A classic bathroom with elegant fixtures and vintage charm.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Classic Guest Room"
+        }
+      ]
+    },
+    {
+      "id": "Modern Bathroom",
+      "name": "Modern Bathroom",
+      "longdescription": "The bathroom embraces modern design and contemporary amenities, with clean lines, minimalist fixtures, and sleek finishes. A walk-in shower with frameless glass doors takes center stage, surrounded by sleek subway tiles and a rainfall showerhead. A floating vanity with a quartz countertop offers ample storage space and a sleek, modern look. A large mirror with integrated LED lighting adds a touch of glamour, while a selection of eco-friendly bath products and plush towels provide a luxurious touch. With its modern amenities and minimalist design, this bathroom offers a sleek and stylish retreat for guests seeking contemporary comfort.",
+      "shortdescription":"A modern bathroom with sleek design and contemporary amenities.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Modern Guest Room"
+        }
+      ]
+    },
+    {
+      "id": "Rustic Bathroom",
+      "name": "Rustic Bathroom",
+      "longdescription": "The bathroom exudes rustic charm and cozy comfort, with warm wood accents, natural materials, and charming details. A vintage-inspired clawfoot tub takes center stage, surrounded by rustic wood paneling and a whimsical shower curtain featuring a woodland motif. A weathered wood vanity with a marble countertop adds a touch of rustic elegance, while a large mirror reflects the soft glow of the vintage-inspired sconces. Handcrafted pottery and woven baskets add a cozy, artisanal touch, while a selection of organic bath products and fluffy towels invite guests to relax and unwind in this charming retreat.",
+      "shortdescription":"A charming bathroom with rustic accents and cozy charm.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Rustic Guest Room"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 1b",
+      "name": "Hallway",
+      "longdescription":"The hallway stretches like a shadowy artery through the heart of the Overlook Hotel, connecting the lobby to the guest rooms, kitchen, and other areas of the hotel. The narrow corridor is dimly lit by flickering sconces set into the walls, casting long shadows that dance across the faded wallpaper. Vintage artwork adorns the walls, depicting scenes of bygone eras and echoing the hotel's storied past. The air is heavy with the scent of old wood and dust, with the faint echoes of footsteps and distant whispers adding to the eerie atmosphere. Despite its faded grandeur, there's a palpable sense of history and mystery lurking within the shadows of Hallway 2, waiting to be discovered by intrepid adventurers.",
+      "shortdescription":"A long corridor connecting various rooms of the hotel, illuminated by dim sconces and lined with vintage artwork.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Kitchen"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Elevator"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Hallway 1c"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 1c",
+      "name": "Hallway",
+      "longdescription":"The hallway stretches like a shadowy artery through the heart of the Overlook Hotel, connecting the lobby to the guest rooms, kitchen, and other areas of the hotel. The narrow corridor is dimly lit by flickering sconces set into the walls, casting long shadows that dance across the faded wallpaper. Vintage artwork adorns the walls, depicting scenes of bygone eras and echoing the hotel's storied past. The air is heavy with the scent of old wood and dust, with the faint echoes of footsteps and distant whispers adding to the eerie atmosphere. Despite its faded grandeur, there's a palpable sense of history and mystery lurking within the shadows of Hallway 2, waiting to be discovered by intrepid adventurers.",
+      "shortdescription":"A long corridor connecting various rooms of the hotel, illuminated by dim sconces and lined with vintage artwork.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Classic Guest Room"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway 1b"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Hallway 1d"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 1d",
+      "name": "Hallway",
+      "longdescription":"The hallway stretches like a shadowy artery through the heart of the Overlook Hotel, connecting the lobby to the guest rooms, kitchen, and other areas of the hotel. The narrow corridor is dimly lit by flickering sconces set into the walls, casting long shadows that dance across the faded wallpaper. Vintage artwork adorns the walls, depicting scenes of bygone eras and echoing the hotel's storied past. The air is heavy with the scent of old wood and dust, with the faint echoes of footsteps and distant whispers adding to the eerie atmosphere. Despite its faded grandeur, there's a palpable sense of history and mystery lurking within the shadows of Hallway 2, waiting to be discovered by intrepid adventurers.",
+      "shortdescription":"A long corridor connecting various rooms of the hotel, illuminated by dim sconces and lined with vintage artwork.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Modern Guest Room"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway 1c"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Hallway 1e"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 1e",
+      "name": "Hallway",
+      "longdescription":"The hallway stretches like a shadowy artery through the heart of the Overlook Hotel, connecting the lobby to the guest rooms, kitchen, and other areas of the hotel. The narrow corridor is dimly lit by flickering sconces set into the walls, casting long shadows that dance across the faded wallpaper. Vintage artwork adorns the walls, depicting scenes of bygone eras and echoing the hotel's storied past. As guests traverse the length of the hallway, they catch glimpses of the grand ballroom at the end, its double doors beckoning invitingly with the promise of revelry and celebration. Despite its faded grandeur, there's a palpable sense of history and mystery lurking within the shadows of the hallway, waiting to be discovered by intrepid adventurers.",
+      "shortdescription":"A long corridor connecting various rooms of the hotel, illuminated by dim sconces and lined with vintage artwork, leading to the ballroom.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Rustic Guest Room"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway 1d"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Ballroom"
         }
       ]
     }

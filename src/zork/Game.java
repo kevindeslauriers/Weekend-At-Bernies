@@ -23,7 +23,7 @@ public class Game {
     try {
       initRooms("src\\zork\\data\\rooms.json");
       initItems("src\\zork\\data\\items.json");
-      currentRoom = roomMap.get("Bedroom");
+      currentRoom = roomMap.get("Lobby");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -50,8 +50,11 @@ public class Game {
       Room room = new Room();
       String roomName = (String) ((JSONObject) roomObj).get("name");
       String roomId = (String) ((JSONObject) roomObj).get("id");
-      String roomDescription = (String) ((JSONObject) roomObj).get("description");
-      room.setDescription(roomDescription);
+      String roomShortDescription = (String) ((JSONObject) roomObj).get("shortdescription");
+      String roomLongDescription = (String) ((JSONObject) roomObj).get("longdescription");
+
+      room.setLongDescription(roomLongDescription);
+      room.setShortDescription(roomShortDescription);
       room.setRoomName(roomName);
 
       JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
@@ -162,7 +165,7 @@ public class Game {
       System.out.println("There is no door!");
     else {
       currentRoom = nextRoom;
-      System.out.println(currentRoom.longDescription());
+      System.out.println(currentRoom.longDescription() + "\n\n");
     }
   }
 }

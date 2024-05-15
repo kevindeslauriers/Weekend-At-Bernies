@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Room {
 
   private String roomName;
-  private String description;
+  private String longDescription;
+  private String shortDescription;
   private ArrayList<Exit> exits;
 
   public ArrayList<Exit> getExits() {
@@ -21,13 +22,15 @@ public class Room {
    * "description" is something like "a kitchen" or "an open court yard".
    */
   public Room(String description) {
-    this.description = description;
+    this.longDescription = description;
     exits = new ArrayList<Exit>();
   }
 
   public Room() {
     roomName = "DEFAULT ROOM";
-    description = "DEFAULT DESCRIPTION";
+    longDescription = "DEFAULT DESCRIPTION";
+    shortDescription = "DEFAULT DESCRIPTION";
+
     exits = new ArrayList<Exit>();
   }
 
@@ -40,7 +43,7 @@ public class Room {
    * constructor).
    */
   public String shortDescription() {
-    return "Room: " + roomName + "\n\n" + description;
+    return "Room: " + roomName + "\n\n" + shortDescription;
   }
 
   /**
@@ -49,7 +52,7 @@ public class Room {
    */
   public String longDescription() {
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString();
+    return "Room: " + roomName + "\n\n" +longDescription + "\n" + exitString();
   }
 
   /**
@@ -104,11 +107,19 @@ public class Room {
     this.roomName = roomName;
   }
 
-  public String getDescription() {
-    return description;
+  public String getLongDescription() {
+    return longDescription;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setLongDescription(String description) {
+    this.longDescription = description;
+  }
+
+  public String getShortDescription() {
+    return shortDescription;
+  }
+
+  public void setShortDescription(String description) {
+    this.shortDescription = description;
   }
 }
