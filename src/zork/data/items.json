@@ -4,7 +4,7 @@
             "id":"straw",
             "name":"paper straw",
             "description":"a paper straw that will likely get soggy as soon as it enters a liquid",
-            "room_id":"Hallway",
+            "room_id":"Hallway 1a",
             "weight":"5",
             "isOpenable":"false"
         },
@@ -12,7 +12,7 @@
             "id":"Chest",
             "name":"A Big Chest",
             "description":"A nice big chest",
-            "room_id":"Bedroom",
+            "room_id":"Modern Guest Room",
             "weight":"10000",
             "isOpenable":"true",
             "isLockable":"false"
@@ -24,9 +24,6 @@
             "item_id":"Chest",
             "weight":"6",
             "isOpenable":"false"
-        },
-        {
-
         }
     ]
 }

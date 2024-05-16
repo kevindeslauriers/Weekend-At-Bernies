@@ -13,6 +13,8 @@ public class Item extends OpenableObject {
     this.name = name;
     this.isOpenable = isOpenable;
     this.description = description;
+    if (isOpenable)
+    inventory = new Inventory(100);
   }
 
   public void open() {
