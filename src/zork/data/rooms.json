@@ -88,10 +88,9 @@
       "shortdescription":"An elegant space for gatherings and events, featuring a stage and dance floor.",
       "exits": [
         {
-          "isLocked": true,
-          "direction": "East",
-          "adjacentRoom": "Bathroom",
-          "keyId": "1234"
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway 1e"
         }
       ]
     },
