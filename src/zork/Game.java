@@ -52,6 +52,19 @@ public class Game {
     JSONParser parser = new JSONParser();
     JSONObject json = (JSONObject) parser.parse(jsonString);
   
+    JSONArray jsonItems = (JSONArray) json.get("items");
+
+    
+    for (Object itemObj : jsonItems) {
+      
+      String itemName = (String) ((JSONObject) itemObj).get("name");
+      String itemId = (String) ((JSONObject) itemObj).get("id");
+      String description = (String) ((JSONObject) itemObj).get("description");
+      int itemWeight = Integer.parseInt((String) ((JSONObject) itemObj).get("weight"));
+      boolean isOpenable = Boolean.parseBoolean((String) ((JSONObject) itemObj).get("isOpenable"));
+
+      Item item = new Item(itemWeight, itemName, isOpenable, description);
+    }
   }
 
   private void initRooms(String fileName) throws Exception {
