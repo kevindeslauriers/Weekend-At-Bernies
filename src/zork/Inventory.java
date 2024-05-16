@@ -30,4 +30,9 @@ public class Inventory {
     }
   }
 
+public Item removeItem(Item item) {
+    
+    throw new UnsupportedOperationException("Unimplemented method 'removeItem'");
+}
+
 }

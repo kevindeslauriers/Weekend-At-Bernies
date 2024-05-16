@@ -5,6 +5,8 @@ public class Item extends OpenableObject {
   private String name;
   private String description;
   private boolean isOpenable;
+  private Inventory inventory;
+  
 
   public Item(int weight, String name, boolean isOpenable, String description) {
     this.weight = weight;
@@ -43,4 +45,19 @@ public class Item extends OpenableObject {
     this.isOpenable = isOpenable;
   }
 
+  public boolean addItem(Item item) {
+    if (isOpenable)
+      return inventory.addItem(item);
+    else 
+      return false;
+}
+
+public Item removeItem(Item item){
+  if(isOpenable)
+    return inventory.removeItem(item);
+  else
+    System.out.println("You cannot take the " + item.name + " from the " + name);
+ 
+  return null;
+}
 }

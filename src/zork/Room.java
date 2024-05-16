@@ -8,6 +8,7 @@ public class Room {
   private String longDescription;
   private String shortDescription;
   private ArrayList<Exit> exits;
+  private Inventory inventory;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -32,6 +33,7 @@ public class Room {
     shortDescription = "DEFAULT DESCRIPTION";
 
     exits = new ArrayList<Exit>();
+    inventory = new Inventory(Integer.MAX_VALUE);
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -122,4 +124,12 @@ public class Room {
   public void setShortDescription(String description) {
     this.shortDescription = description;
   }
+
+public boolean addItem(Item item) {
+    return inventory.addItem(item);
+}
+
+public Item removeItem(Item item){
+    return inventory.removeItem(item);
+}
 }

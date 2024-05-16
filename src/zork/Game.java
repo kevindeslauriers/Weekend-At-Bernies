@@ -12,6 +12,8 @@ import org.json.simple.parser.JSONParser;
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
+  public static HashMap<String, Item> itemMap = new HashMap<String, Item>();
+
 
   private Parser parser;
   private Room currentRoom;
@@ -63,7 +65,18 @@ public class Game {
       int itemWeight = Integer.parseInt((String) ((JSONObject) itemObj).get("weight"));
       boolean isOpenable = Boolean.parseBoolean((String) ((JSONObject) itemObj).get("isOpenable"));
 
+      String loc_id = (String) ((JSONObject) itemObj).get("room_id");
       Item item = new Item(itemWeight, itemName, isOpenable, description);
+
+      if (loc_id != null){
+        roomMap.get(loc_id).addItem(item);
+      }else{
+        loc_id = (String) ((JSONObject) itemObj).get("item_id");
+        itemMap.get(loc_id).addItem(item);
+      }
+
+      itemMap.put(itemId, item);
+    
     }
   }
 
